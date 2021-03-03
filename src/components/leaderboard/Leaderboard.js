@@ -69,7 +69,7 @@ function Leaderboard({ leagueID }) {
     
 
       await resultsData.forEach(match => {
-        let beginAt = new Date(match["beginAt"] || null).toLocaleTimeString("de-DE",
+        let beginAt = new Date(match?.beginAt || null).toLocaleTimeString("de-DE",
         {
           hour:  "2-digit",
           minute: "2-digit",
@@ -79,10 +79,10 @@ function Leaderboard({ leagueID }) {
 
         match.participants.map( (p) => {
           
-          let contestant = contestantsData.find( c => c.id === p.id);
+          let contestant = contestantsData?.find( c => c.id === p.id);
           contestants.push({
-            id: contestant["id"],
-            name: contestant["name"],
+            id: contestant?.id,
+            name: contestant?.name,
             points: p.points[0],
             isWinner: p.place === 1
           });
