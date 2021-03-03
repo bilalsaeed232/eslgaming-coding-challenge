@@ -1,0 +1,11 @@
+.box {
+  border-radius: 2px 2px 0 0;
+  margin: 20px 0 5px 20px;
+  max-width: 31.25rem;
+
+  @media only screen and (max-width: 768px) {
+    width: 100%;
+    max-width: 40%;
+    border: 1px solid red;
+  }
+}

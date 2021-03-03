@@ -1,0 +1,50 @@
+body {
+  font-family: "Open Sans", sans-serif;
+  background-color: #ebecee;
+  color: #333333;
+  display: flex;
+
+  font-size: 14px;
+  font-weight: 400;
+
+  h1 {
+    font-size: 1.313rem;
+    margin-bottom: 4px;
+  }
+
+  ul {
+    list-style-type: none;
+  }
+
+  &.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+.button {
+  background-color: #ffffff;
+  color: #333333;
+  line-height: 19px;
+  padding: 3px 10px;
+  border: 1px solid #bdc3c7;
+  box-sizing: border-box;
+  border-radius: 2px;
+  font-family: "Open Sans", sans-serif;
+  cursor: pointer;
+
+  .caret {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+  }
+
+  .caret-up {
+    content: "\25B2";
+  }
+
+  .caret-down {
+    content: "\25BC";
+  }
+}
