@@ -8,7 +8,7 @@ function App() {
     <div className="App">
       <Header />
       <div className="box">
-        <Leaderboard />
+        <Leaderboard leagueID="177161" />
       </div>
       <Footer />  
     </div>

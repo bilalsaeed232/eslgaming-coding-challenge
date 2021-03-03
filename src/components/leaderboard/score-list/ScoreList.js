@@ -1,52 +1,29 @@
 import './ScoreList.scss';
 
-function ScoreList() {
+function ScoreList({ matchesData }) {
+
   return (    
     <ul className="list">
-      <li>
-          <time>12:51</time>
-          <p className="opponent winner">
-          <span className="opponent-name">Black Lotus</span>
-          <span className="score">4</span>		
-          </p>
-          <p className="opponent">
-          <span className="opponent-name">Team Chandra</span>
-          <span className="score">2</span>		
-          </p>
-      </li>
-      <li>
-          <time>12:51</time>
-          <p className="opponent winner">
-          <span className="opponent-name">Black Lotus</span>
-          <span className="score">4</span>		
-          </p>
-          <p className="opponent">
-          <span className="opponent-name">Team Chandra</span>
-          <span className="score">2</span>		
-          </p>
-      </li>
-      <li>
-          <time>12:51</time>
-          <p className="opponent winner">
-          <span className="opponent-name">Black Lotus</span>
-          <span className="score">4</span>		
-          </p>
-          <p className="opponent">
-          <span className="opponent-name">Team Chandra</span>
-          <span className="score">2</span>		
-          </p>
-      </li>
-      <li>
-          <time>12:51</time>
-          <p className="opponent winner">
-          <span className="opponent-name">Black Lotus</span>
-          <span className="score">4</span>		
-          </p>
-          <p className="opponent">
-          <span className="opponent-name">Team Chandra</span>
-          <span className="score">2</span>		
-          </p>
-      </li>
+      { 
+        matchesData.map( (match) => {
+          let results =
+            match.contestants.map(contestant => {
+              return (<p key={contestant.id} className={`opponent ${contestant.isWinner ? 'winner' : ''}`}>
+                <span className="opponent-name">{ contestant.name }</span>
+                <span className="score">{ contestant.points }</span>		
+              </p>  ) 
+            });
+           
+          return (
+            <li key={match.id}>
+              <time>{ match.beginAt }</time>
+               { results }
+            </li>
+          )
+        }) 
+      }
+      
+
     </ul>	
   );
 }

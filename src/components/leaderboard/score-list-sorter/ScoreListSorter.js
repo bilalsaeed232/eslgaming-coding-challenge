@@ -1,9 +1,9 @@
 import './ScoreListSorter.scss';
 
-function ScoreListSorter() {
+function ScoreListSorter({onSortClick}) {
   return (    
     <div className="list-sorter">
-      <button id="sortByDate" className="button button-default">Date <span className="caret caret-up"></span></button>
+      <button id="sortByDate" className="button button-default" onClick={onSortClick}>Date <span className="caret caret-up"></span></button>
     </div>
   );
 }
